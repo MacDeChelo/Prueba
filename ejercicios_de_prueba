@@ -1,0 +1,167 @@
+Ejercicio numero 1 quintiles:
+
+arancel = 1_800_000
+
+matricula = 90_000
+
+
+
+
+
+promedio = float(input(" ingrese su promedio obtenido: "))
+
+quintil = int(input(" ingrese su quintil por favor: "))
+
+
+
+if promedio > 6.0:
+
+    if quintil == 1 or quintil == 2:
+
+      descuento = 20
+
+      descuentototal = (arancel * descuento ) // 100
+
+      valortotal = (arancel - descuentototal)
+
+    if quintil == 3 or quintil == 4:
+
+      descuento = 15
+
+      descuentototal = (arancel * descuento ) // 100
+
+      valortotal = (arancel - descuentototal)
+
+    elif quintil == 5:
+
+     valortotal = 1_800_000
+
+elif 5.0 < promedio <= 6.0:
+
+    if quintil == 1 or quintil == 2:
+
+      descuento = 13
+
+      descuentototal = (arancel * descuento ) // 100
+
+      valortotal = (arancel - descuentototal)
+
+    if quintil == 3 or quintil == 4:
+
+      descuento = 10
+
+      descuentototal = (arancel * descuento ) // 100
+
+      valortotal = (arancel - descuentototal)
+
+    elif quintil == 5:
+
+       valortotal = 1_800_000
+
+else:
+
+   valortotal = 1_800_000
+
+if quintil == 1 or quintil == 2 or quintil == 3:
+
+  if promedio > 5.5:
+
+    bono_matricula = 15
+
+    descuento_matricula = (matricula * bono_matricula) // 100
+
+    totalmatricula = (matricula - descuento_matricula)
+
+  else:
+
+    bono_matricula = 10
+
+    descuento_matricula = (matricula * bono_matricula) // 100
+
+    totalmatricula = (matricula - descuento_matricula)
+
+elif quintil == 4 or quintil == 5:
+
+   totalmatricula = 90_0000
+
+else:
+
+   totalmatricula = 90_000
+
+print(" Detalle de aranceles")
+
+print(f" Total a agar arancel: {valortotal} ")
+
+print(f" valor a pagar en matricula es: {totalmatricula}")
+
+
+
+Ejercicio numero 2 adivina el numero:
+
+
+
+
+
+import random
+
+
+
+while True:
+
+  try:
+
+    n1 = int(input(" ingrese un numero (minimo): "))
+
+    n2 = int(input(" ingrese un segundo numero (maximo): "))
+
+    if n1 < n2:
+
+      break
+
+    else:
+
+      print(" el numero 1 debe ser menor que el numero 2 ")
+
+  except ValueError:
+
+    print(" debe ingresar un numero valido ")
+
+
+
+numero_aleatorio = random.randint(n1,n2)
+
+print( " bienvendo a adivinar el numero aleatorio ")
+
+intentos = 3
+
+while intentos > 0:
+
+  try:
+
+    adivinar = int(input(f" tienes {intentos} intentos ¿Cual es el numero aleatorio?: "))
+
+    if adivinar == numero_aleatorio:
+
+      print (f" Felicidades haz adivinado el numero: {numero_aleatorio}")
+
+      break
+
+    else:
+
+      intentos -= 1
+
+      if adivinar < numero_aleatorio:
+
+        print(" el numero es mayor ")
+
+      else:
+
+        print(" el numero es menor")
+
+  except ValueError:
+
+    print(" debe ingresar un numero valido ")
+
+  if intentos == 0:
+
+    print(f" Haz agotado el numero de intetos el numero era {numero_aleatorio}")
